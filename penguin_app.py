@@ -103,5 +103,5 @@ if st.sidebar.button("Predict"):
     species_type = prediction(rf_clf, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex, island)
     score = rf_clf.score(X_train, y_train)
 
-st.write("Penguin Species predicted:", species_type)
-st.write("Accuracy score of this model:", score)
+  st.write("Penguin Species predicted:", species_type)
+  st.write("Accuracy score of this model:", score)

@@ -93,17 +93,14 @@ classifier = st.sidebar.selectbox("Classifier", ("Support Vector Machine", "Logi
 if st.sidebar.button("Predict"):
   if classifier == "Support Vector Machine":
     species_type = prediction(svc_model, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex, island)
-    species_type = species_type[0]
     score = svc_model.score(X_train, y_train)
   
   elif classifier == "Logistic Regression":
     species_type = prediction(log_reg, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex, island)
-    species_type = species_type[0]
     score = log_reg.score(X_train, y_train)
   
   else:
     species_type = prediction(rf_clf, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex, island)
-    species_type = species_type[0]
     score = rf_clf.score(X_train, y_train)
 
 st.write("Penguin Species predicted:", species_type)
